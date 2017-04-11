@@ -1,26 +1,30 @@
 import React from 'react';
+import * as firebase from 'firebase';
 
 export default class Doner extends React.Component {
+     submit(){
+            let name = this.refs.name.value;
+            let number = this.refs.number.value;
+            let bloodGroup = this.refs.donerBloodGroup.value;
+            console.log(name, number, bloodGroup);
+
+            //Firebase Coding
+            firebase.database().ref('users/' + bloodGroup).push({
+                name: name,
+                number: number,
+                bloodGroup: bloodGroup
+            })
+
+        }
     render() {
         return (
-            <div className="card blue-grey darken-2" style={{ margin: "1vh 5em" }}>
-                <div className="card-content white-text">
-                    <span className="card-title">Doner</span>
-                    <div className="input-field col s12">
-                        <select>
-                            <option value="0">Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <label>Materialize Select</label>
-                    </div>
-                </div>
-                <div className="card-action">
-                    <a href="#">This is a link</a>
-                    <a href="#">This is a link</a>
-                </div>
-            </div>
+           <div style={{margin:'0px 3.6em'}}>
+               <h5>Doner</h5>
+                    <input type="text" placeholder='Your Name' ref='name'/>
+                    <input type="number" placeholder='Your Phone Number' ref='number'/>
+                    <input type="text" placeholder='Enter Your bloodGroup' ref='donerBloodGroup'/>
+                   <button className='btn blue' onClick={this.submit.bind(this)}>Submit</button>
+           </div>
         )
     }
 }

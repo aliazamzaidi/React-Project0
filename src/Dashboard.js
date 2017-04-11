@@ -6,7 +6,7 @@ class Dashboard extends React.Component{
   constructor(props){
     super(props);
       this.state = ({
-        loginEmailFromFB: 'none'
+        loginEmailFromFB: 'None'
       })
   }
   componentDidMount(){
