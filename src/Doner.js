@@ -9,7 +9,7 @@ export default class Doner extends React.Component {
             console.log(name, number, bloodGroup);
 
             //Firebase Coding
-            firebase.database().ref('users/' + bloodGroup).push({
+            firebase.database().ref('users/').push({
                 name: name,
                 number: number,
                 bloodGroup: bloodGroup

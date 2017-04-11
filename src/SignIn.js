@@ -33,14 +33,7 @@ class SignInCard extends Component {
       let userEmail = user.email;
       console.log(`userUID ${userEmail}`);
       //////
-      var userId = firebase.auth().currentUser.uid;
-       
-        firebase.database().ref('users/' + userId).set({
-          // username: name,
-          email: userEmail,
-          // profile_picture: imageUrl
-        });
-      //////
+      // var userId = firebase.auth().currentUser.uid;
       browserHistory.push('/dashboard')
     })
   }
