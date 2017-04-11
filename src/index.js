@@ -15,7 +15,7 @@ ReactDOM.render(
                <IndexRoute component={SignInCard} />
                <Route path='/signin' component={SignInCard}></Route>
                <Route path='/signup' component={SignUpCard}></Route>
-               <Route path='/Dashboard' component={Dashboard}></Route>
+               <Route path='/dashboard' component={Dashboard}></Route>
                </Route>
             </Router>,
   document.getElementById('root')
