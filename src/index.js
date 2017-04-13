@@ -8,6 +8,7 @@ import Main from './main'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import SignUpCard from './SignUp';
 import Dashboard from './Dashboard';
+import Table from './Table'
 
 ReactDOM.render(
             <Router history={browserHistory}>
@@ -16,6 +17,7 @@ ReactDOM.render(
                <Route path='/signin' component={SignInCard}></Route>
                <Route path='/signup' component={SignUpCard}></Route>
                <Route path='/dashboard' component={Dashboard}></Route>
+               <Route path='/table' component={Table}></Route>
                </Route>
             </Router>,
   document.getElementById('root')

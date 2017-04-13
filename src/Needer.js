@@ -15,7 +15,7 @@ export default class Needer extends React.Component{
         let bloodGroup = this.refs.bloodGroup.value;
         firebase.database().ref('/users/' + bloodGroup).once('value').then(function(snapshot) {
          var username = snapshot.val();
-         console.log(username);
+        //  console.log(username);
          let allValueOfObject = Object.values(username)
          console.log(allValueOfObject[0].bloodGroup); // value from object, just a random check
          console.log(Object.keys(allValueOfObject).length); // length of an array, also a random check
@@ -24,6 +24,8 @@ export default class Needer extends React.Component{
              arr.push(allValueOfObject[i]);
          }
          console.log(arr)
+         /////Page Change to 
+
     });
 
     }
